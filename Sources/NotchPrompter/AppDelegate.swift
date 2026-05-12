@@ -38,6 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.hasShadow = false
         window.ignoresMouseEvents = true
         window.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle, .fullScreenAuxiliary]
+        window.sharingType = .none
 
         let contentView = NSHostingView(
             rootView: NotchOverlayView()
