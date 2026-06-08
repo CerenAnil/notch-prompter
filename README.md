@@ -12,6 +12,7 @@ A lightweight macOS teleprompter that scrolls your script inside the camera notc
 - Automatically positions text below the camera so nothing is obscured
 - Adjustable scroll speed, font size, and font family
 - Global keyboard shortcuts that work in any app (Accessibility permission required)
+- Edit your script in `prompter.txt` - changes reload live without restarting
 - No App Store, no subscription, no external dependencies
 
 ---
@@ -88,7 +89,8 @@ NotchPrompter/
     └── NotchPrompter/
         ├── NotchPrompterApp.swift         - App entry point
         ├── AppDelegate.swift              - Window setup, keyboard shortcuts
-        ├── PrompterState.swift            - Shared observable state
+        ├── PrompterState.swift            - Shared observable state, file watcher
+        ├── prompter.txt                   - Your script - edit this file directly
         ├── ControlPanelView.swift         - Settings and editor UI
         └── NotchOverlayView.swift         - Notch overlay with scrolling text
 ```
@@ -106,9 +108,9 @@ No third-party dependencies.
 
 ---
 
-## Changing the Default Script
+## Changing the Script
 
-Edit the `scriptText` string in `Sources/NotchPrompter/PrompterState.swift`, or simply paste your script directly into the text editor in the control panel at runtime - no rebuild needed.
+Edit `Sources/NotchPrompter/prompter.txt` in any text editor and save - the prompter reloads the text live without restarting the app.
 
 ---
 
